@@ -12,6 +12,9 @@
 
 
 eventmerge=function(MOMENTARY,EVENT,eventNAME="eventYN"){
+
+
+
 ##### USED IN FUNCTION #####
 
   #MOMENTARY<-load(MOMENTARY)
