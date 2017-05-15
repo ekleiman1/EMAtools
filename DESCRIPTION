@@ -1,0 +1,13 @@
+Package: EMAtools
+Type: Package
+Title: Data Management Tools for Real-Time Monitoring/Ecological Momentary Assessment Data
+Version: 0.1.0
+Authors@R: person("Evan", "Kleiman", email = "ekleiman@fas.harvard.edu",
+  role = c("aut", "cre"))
+Description: Do data management functions common in real-time monitoring/EMA/ESM/micro-longitudinal data, including centering on participant means and merging event-level data into momentary datasets where you need
+    the events to correspond to the nearest datapoint in the momentary data. This is VERY early release software, and more features will be added over time. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: DataCombine
+RoxygenNote: 6.0.1
