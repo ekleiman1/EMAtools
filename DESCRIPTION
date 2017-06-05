@@ -9,5 +9,5 @@ Description: Do data management functions common in real-time monitoring (also c
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-Imports: DataCombine
+Imports: DataCombine,ggplot2,sjstats
 RoxygenNote: 6.0.1

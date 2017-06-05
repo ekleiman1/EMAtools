@@ -1,4 +1,4 @@
-#' Merge Mobile EMA (mEMA) event-level data into momentary data
+#' Create power curves for EMA data
 #'
 #' This allows you to estimate power to detect an effect at three standard effect sizes (d = 0.2, 0.5, and 0.8). It uses the smpsize_lmm function from sjstats to generate data for the curves and ggplot2 to plot them.
 #' @param NumbPart Total number of participants (i.e., level-2 unit)
@@ -67,12 +67,12 @@ LabResp<-(cbind(c("50%","50%","50%","50%","50%","50%","50%","50%","50%","50%","5
                  "100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%","100%")))
 
 comp_final<-as.data.frame(cbind((rbind(power,power,power)),NumbRespColumn,LabResp))
-colnames(comp_final)<-c("power","NumbRespColumn","Response Rate")
+colnames(comp_final)<-c("power","NumbRespColumn","Response_Rate")
 
 
-lg<-data.frame(cbind(power,eff8a,"Large (d=0.8)"));colnames(lg)<-c("Power","Resp","Effect Size")
-md<-data.frame(cbind(power,eff5a,"Medium (d=0.5)"));colnames(md)<-c("Power","Resp","Effect Size")
-sm<-data.frame(cbind(power,eff2a,"Small (d=0.2)"));colnames(sm)<-c("Power","Resp","Effect Size")
+lg<-data.frame(cbind(power,eff8a,"Large (d=0.8)"));colnames(lg)<-c("Power","Resp","Effect_Size")
+md<-data.frame(cbind(power,eff5a,"Medium (d=0.5)"));colnames(md)<-c("Power","Resp","Effect_Size")
+sm<-data.frame(cbind(power,eff2a,"Small (d=0.2)"));colnames(sm)<-c("Power","Resp","Effect_Size")
 
 eff_final<-rbind(lg,md,sm)
 
@@ -83,13 +83,13 @@ eff_final<-rbind(lg,md,sm)
 xlab_chart <- paste("Responses per participant (n =",NumbPart,"participants)" )
 
 
-PowerPlot1<-ggplot2::ggplot()+ geom_line(aes(x = Resp,y = Power,color=`Effect Size`),size=1, data=eff_final)+
-xlab(xlab_chart) + ylab("Power (1-β)") +
+PowerPlot1<-ggplot2::ggplot()+ geom_line(aes(x = Resp,y = Power,color=Effect_Size),size=1, data=eff_final)+
+xlab(xlab_chart) + ylab("Power (1-beta)") +
   scale_x_continuous(limits = c(0,(round((NumbResp+40),-1))),breaks =seq(0, (round(NumbResp+40,-1)), by=20))+
   scale_y_continuous(breaks=c(0.1,0.4,0.6,0.8,1.00), limits=c(0.1,1.00))+
   geom_vline(xintercept=(NumbResp*.50),color="grey65", linetype = 3)+geom_vline(xintercept=(NumbResp*.75),color="grey65", linetype = 2)+
   geom_vline(xintercept=(NumbResp),color="grey65", linetype = 1)+
-  geom_line(aes(x = as.numeric(NumbRespColumn), y = as.numeric(power), linetype=`Response Rate`), data=comp_final,color="grey65")+
+  geom_line(aes(x = as.numeric(NumbRespColumn), y = as.numeric(power), linetype=Response_Rate), data=comp_final,color="grey65")+
   theme_classic()
 return(PowerPlot1)
 }

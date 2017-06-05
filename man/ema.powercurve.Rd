@@ -2,7 +2,7 @@
 % Please edit documentation in R/powercurve.R
 \name{ema.powercurve}
 \alias{ema.powercurve}
-\title{Merge Mobile EMA (mEMA) event-level data into momentary data}
+\title{Create power curves for EMA data}
 \usage{
 ema.powercurve(NumbPart, NumbResp, days, respday, Est_ICC = 0.5)
 }
