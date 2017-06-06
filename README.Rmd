@@ -24,6 +24,8 @@ There are currently three tools:
 
 **ema.powercurve**, which allows you to create power curves for multi-level data. These curves can be very useful for feasibility sections of grant applications. 
 
+**lm_slopes_compare**, which lets you compare slopes from two comparing lme4 objects. 
+
 ##How do I install EMA tools?
 `install.packages("EMAtools")`
 

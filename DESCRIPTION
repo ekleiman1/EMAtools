@@ -1,7 +1,7 @@
 Package: EMAtools
 Type: Package
 Title: Data Management Tools for Real-Time Monitoring/Ecological Momentary Assessment Data
-Version: 0.1.1
+Version: 0.1.2
 Authors@R: person("Evan", "Kleiman", email = "ekleiman@fas.harvard.edu",
   role = c("aut", "cre"))
 Description: Do data management functions common in real-time monitoring (also called: ecological momentary assessment, experience sampling, micro-longitudinal) data, including creating power curves for multi-level data, centering on participant means and merging event-level data into momentary data sets where you need
