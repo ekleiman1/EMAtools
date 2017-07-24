@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 EMAtools is an early-release set of tools that researchers who use real-time monitoring/EMA/ESM/micro-longitudinal data will find useful. 
 
 ##What can you do now with EMAtools?
-There are currently three tools:
+There are currently four tools:
 
 **pcenter**, which allows you to center momentary data on participant means (also called "centering within clusters" or "centering within groups").
 
@@ -24,7 +24,7 @@ There are currently three tools:
 
 **ema.powercurve**, which allows you to create power curves for multi-level data. These curves can be very useful for feasibility sections of grant applications. 
 
-**lm_slopes_compare**, which lets you compare slopes from two comparing lme4 objects. 
+**lm_slopes_compare**, which lets you compare slopes from two related lme4 objects. 
 
 ##How do I install EMA tools?
 `install.packages("EMAtools")`
