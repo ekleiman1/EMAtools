@@ -1,6 +1,6 @@
 ## Test environments
-* local OS X install, R 3.4.0 ("You Stupid Darkness")
-* ubuntu 12.04 (on travis-ci), R 3.4.0
+* local OS X install
+* check_rhub()
 
 
 ## R CMD check results
