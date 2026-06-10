@@ -1,0 +1,9 @@
+ObsNumbs                Create observation numbers in your data
+ema.powercurve          Create power curves for EMA data
+eventmerge              Merge Mobile EMA (mEMA) event-level data into
+                        momentary data
+gcenter                 Centering on grand-means
+lm_slopes_compare       Compare the slopes of two lme models
+lme.dscore              Calculate d scores from an lme4 or nlme object
+pcenter                 Centering on person-means
+pmean                   Centering on person-means

@@ -1,0 +1,202 @@
+pkgname <- "EMAtools"
+source(file.path(R.home("share"), "R", "examples-header.R"))
+options(warn = 1)
+base::assign(".ExTimings", "EMAtools-Ex.timings", pos = 'CheckExEnv')
+base::cat("name\tuser\tsystem\telapsed\n", file=base::get(".ExTimings", pos = 'CheckExEnv'))
+base::assign(".format_ptime",
+function(x) {
+  if(!is.na(x[4L])) x[1L] <- x[1L] + x[4L]
+  if(!is.na(x[5L])) x[2L] <- x[2L] + x[5L]
+  options(OutDec = '.')
+  format(x[1L:3L], digits = 7L)
+},
+pos = 'CheckExEnv')
+
+### * </HEADER>
+library('EMAtools')
+
+base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+base::assign(".old_wd", base::getwd(), pos = 'CheckExEnv')
+cleanEx()
+nameEx("ObsNumbs")
+### * ObsNumbs
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: ObsNumbs
+### Title: Create observation numbers in your data
+### Aliases: ObsNumbs
+### Keywords: Numbers Observation
+
+### ** Examples
+
+## Not run: data$ObsNumb<-ObsNumbs(data$ID,data$TS, BY="P")
+## Not run: data$DayNumb<-ObsNumbs(data$ID,data$TS,BY="D")
+## Not run: data$ObsNumb_D<-ObsNumbs(data$ID,data$TS,BY="PD")
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ObsNumbs", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("ema.powercurve")
+### * ema.powercurve
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: ema.powercurve
+### Title: Create power curves for EMA data
+### Aliases: ema.powercurve
+### Keywords: analysis power
+
+### ** Examples
+
+## Not run: ema.powercurve(NumbPart=80,days=30,respday=3)
+ ## Not run: ema.powercurve(NumbPart=80,NumbResp=200)
+  ## Not run: ema.powercurve(NumbPart=80,NumbResp=200,COL.8="orange")
+  ## Not run: 
+##D ema.powercurve(NumbPart=80, NumbResp=200, COL.8="orange",
+##D   COL.5="#FF5733", COL.2="#8E44AD")
+## End(Not run)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("ema.powercurve", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("eventmerge")
+### * eventmerge
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: eventmerge
+### Title: Merge Mobile EMA (mEMA) event-level data into momentary data
+### Aliases: eventmerge
+### Keywords: merging
+
+### ** Examples
+
+## Not run: newDATA<-eventmerge(MOMENTARYdata,EVENTdata,eventNAME="eventYN")
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("eventmerge", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("gcenter")
+### * gcenter
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: gcenter
+### Title: Centering on grand-means
+### Aliases: gcenter
+### Keywords: centering
+
+### ** Examples
+
+## Not run: data$centeredVAR<-gcenter(data$var)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("gcenter", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("lm_slopes_compare")
+### * lm_slopes_compare
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: lm_slopes_compare
+### Title: Compare the slopes of two lme models
+### Aliases: lm_slopes_compare
+### Keywords: Compare slopes
+
+### ** Examples
+
+## Not run: model1<-lmer(DV~IV1+IV2+IV3+(1|subject),data=DATA_1)
+## Not run: model2<-lmer(DV~IV1+IV2+IV3+(1|subject),data=DATA_2)
+ ## Not run: lm_slopes_compare(model1,model2)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("lm_slopes_compare", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("lme.dscore")
+### * lme.dscore
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: lme.dscore
+### Title: Calculate d scores from an lme4 or nlme object
+### Aliases: lme.dscore
+### Keywords: Cohen's D
+
+### ** Examples
+
+## Not run: model1<-lmer(DV~IV1+IV2+IV3+(1|subject),data=DATA_1)
+ ## Not run: lme.dscore(model1,data=DATA_1,type="lme4")
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("lme.dscore", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("pcenter")
+### * pcenter
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: pcenter
+### Title: Centering on person-means
+### Aliases: pcenter
+### Keywords: centering
+
+### ** Examples
+
+## Not run: data$centeredVAR<-pcenter(data$ID,data$var)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("pcenter", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+cleanEx()
+nameEx("pmean")
+### * pmean
+
+flush(stderr()); flush(stdout())
+
+base::assign(".ptime", proc.time(), pos = "CheckExEnv")
+### Name: pmean
+### Title: Centering on person-means
+### Aliases: pmean
+### Keywords: centering
+
+### ** Examples
+
+## Not run: data$centeredVAR<-pmean(data$ID,data$var)
+
+
+
+base::assign(".dptime", (proc.time() - get(".ptime", pos = "CheckExEnv")), pos = "CheckExEnv")
+base::cat("pmean", base::get(".format_ptime", pos = 'CheckExEnv')(get(".dptime", pos = "CheckExEnv")), "\n", file=base::get(".ExTimings", pos = 'CheckExEnv'), append=TRUE, sep="\t")
+### * <FOOTER>
+###
+cleanEx()
+options(digits = 7L)
+base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+grDevices::dev.off()
+###
+### Local variables: ***
+### mode: outline-minor ***
+### outline-regexp: "\\(> \\)?### [*]+" ***
+### End: ***
+quit('no')

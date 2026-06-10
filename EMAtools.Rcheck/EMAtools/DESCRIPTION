@@ -1,6 +1,7 @@
 Package: EMAtools
 Type: Package
-Title: Data Management Tools for Real-Time Monitoring/Ecological Momentary Assessment Data
+Title: Data Management Tools for Real-Time Monitoring/Ecological
+        Momentary Assessment Data
 Version: 0.1.5
 Authors@R: person("Evan", "Kleiman", email = "evan.kleiman@rutgers.edu",
   role = c("aut", "cre"))
@@ -9,3 +10,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 Imports: ggplot2, lmerTest, sjstats (>= 0.10.2), anytime, plyr
 RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2026-06-10 02:08:10 UTC; evan
+Author: Evan Kleiman [aut, cre]
+Maintainer: Evan Kleiman <evan.kleiman@rutgers.edu>
+Built: R 4.5.2; ; 2026-06-10 02:08:18 UTC; unix
